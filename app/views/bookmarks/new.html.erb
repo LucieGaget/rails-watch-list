@@ -1,7 +1,10 @@
-<h1>Add a bookmark</h1>
+<div class="container m-6">
+
+<h1 class="text-center my-4">Add a bookmark</h1>
 
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.association :movie %>
   <%= f.input :comment %>
-  <%= f.submit %>
+  <%= f.button :submit, class: 'btn btn-primary rounded-pill justify-content-center' %>
 <% end %>
+</div>

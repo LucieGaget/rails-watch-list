@@ -1,5 +1,10 @@
+<div class="container m-6">
+
+<h1 class="text-center my-4">Add a list</h1>
+
 <%= simple_form_for @list do |f| %>
   <%= f.input :name %>
   <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: 'btn btn-primary rounded-pill text-center' %>
 <% end %>
+</div>
