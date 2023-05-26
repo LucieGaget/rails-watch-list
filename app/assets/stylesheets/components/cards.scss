@@ -24,3 +24,25 @@
     color: white;
    }
 }
+
+.card-trip {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.card-trip > img {
+  width: 100%
+}
+
+.card-trip h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 16px;
+  opacity: .7;
+  margin: 0;
+}

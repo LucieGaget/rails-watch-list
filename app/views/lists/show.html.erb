@@ -1,19 +1,30 @@
-<div class="container">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.2)), url(<%= cl_image_path @list.photo.key, height: 30 %>);">
+
 <h1 class="text-center my-4"><%= @list.name %></h1>
+<%= link_to "Add a bookmart", new_list_bookmark_path(@list), class: 'btn btn-book position-absolute top-50 start-50 translate-middle' %>
+</div>
+<div class="container">
+<br>
+<br>
 
-<%= link_to "Add a bookmart", new_list_bookmark_path(@list), class: 'btn btn-ghost' %>
-<br>
-<br>
-<p>
+
+<div class="d-flex justify-content-evenly">
  <% @list.bookmarks.each do |bookmark| %>
-  <p><strong><%= bookmark.movie.title %></strong></p>
-  <p><%= bookmark.comment %>
+ <div class="card-trip">
+  <%= image_tag bookmark.movie.poster_url, alt: "movie" %>
+    <div class="card-trip-infos">
+      <h2 class="mx-2 my-2"><strong><%= bookmark.movie.title %></strong></h2>
+     <p class="mx-2"><%= bookmark.comment %></p>
+     <br>
+  </div>
    <%= link_to "Delete",
-        bookmark_path(bookmark),
+        bookmark_path(bookmark), class: 'btn btn-danger text-white btn-sm rounded-pill m-3',
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %></p>
+      %>
+</div>
  <% end %>
-</p>
+</div>
 
-<%= link_to "Back to lists", lists_path %>
+
+<i class="fa-solid fa-arrow-left"></i><%= link_to "Back to lists", lists_path, class: "text-decoration-none text-dark fw-bold p-2" %>
 </div>
